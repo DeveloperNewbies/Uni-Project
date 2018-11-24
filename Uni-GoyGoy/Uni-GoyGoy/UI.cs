@@ -10,6 +10,7 @@ namespace Uni_GoyGoy
     public class UI
     {
         /* UI Decleration */
+        RelativeLayout main_rl;
         RelativeLayout[] rl_ui;
         RelativeLayout rl_btns;
 
@@ -51,13 +52,21 @@ namespace Uni_GoyGoy
              * rl_ui[4] = hastags UI - 
              * rl_ui[5] = studyexams UI*/
 
+
+            main_rl = new RelativeLayout();
             rl_ui = new RelativeLayout[6];
             for (int i = 0; i < rl_ui.GetLength(0); i++)
+            {
                 rl_ui[i] = new RelativeLayout();
+                rl_ui[i].WidthRequest = Ekran.Android_Width;
+                rl_ui[i].HeightRequest = Ekran.Android_Height;
+            }
+
 
 
             rl_btns = new RelativeLayout();
             rl_btns.HeightRequest = 100;
+
 
         }
 
@@ -87,7 +96,6 @@ namespace Uni_GoyGoy
             }
 
            
-
             for (int i = 0; i < btns.GetLength(0); i++)
             {
                 int c = buttons_width * i;
@@ -98,28 +106,55 @@ namespace Uni_GoyGoy
                 Constraint.RelativeToParent((x) => { return c + v; }),
                 Constraint.RelativeToParent((x) => { return x.Height - k ; }));
 
-                rl_ui[i].Children.Add(rl_btns,
-                Constraint.RelativeToParent((x) => { return 0; }),
-                Constraint.RelativeToParent((x) => { return x.Height - 100; }));
+                
             }
 
 
-            
+            /*for (int i = 0; i < rl_ui.GetLength(0); i++)
+            {
+                
+                rl_ui[i].Children.Add(rl_btns,
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return x.Height - 100; }));
+
+            }
+            */
+
+            main_rl.Children.Add(rl_ui[0],
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return 0; }));
+            main_rl.Children.Add(rl_btns,
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return x.Height - 100; }));
 
         }
 
         /*********** End of UI Buttons Initialize **********/
 
+        public RelativeLayout getScreen()
+        {
+            return main_rl;
+        }
+
 
         /*********************** Giriş Sistemi Arayüzü ***************************/
         private void Login_UI()
         {
-
+            
         }
 
-        public RelativeLayout getLogin_UI()
+
+        public void getLogin_UI()
         {
-            return rl_ui[0];
+            rl_ui[0].BackgroundColor = Color.Red;
+            main_rl.Children.RemoveAt(1);
+            main_rl.Children.RemoveAt(0);
+            main_rl.Children.Add(rl_ui[0], 
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return 0; }));
+            main_rl.Children.Add(rl_btns,
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return x.Height - 100; }));
         }
 
         /***********************    Giriş Sistemi Arayüzü Sonu       ***************************/
@@ -131,11 +166,20 @@ namespace Uni_GoyGoy
         {
 
             
+
         }
 
-        public RelativeLayout getRing_UI()
+        public void getRing_UI()
         {
-            return rl_ui[1];
+            rl_ui[1].BackgroundColor = Color.Yellow;
+            main_rl.Children.RemoveAt(1);
+            main_rl.Children.RemoveAt(0);
+            main_rl.Children.Add(rl_ui[1],
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return 0; }));
+            main_rl.Children.Add(rl_btns,
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return x.Height - 100; }));
         }
 
         /***********************    Ring Takip Sistemi Arayüzü Sonu       ***************************/
@@ -146,9 +190,17 @@ namespace Uni_GoyGoy
 
         }
 
-        public RelativeLayout hashtagNews_UI()
+        public void getHashtagNews_UI()
         {
-            return rl_ui[0];
+            rl_ui[2].BackgroundColor = Color.Green;
+            main_rl.Children.RemoveAt(1);
+            main_rl.Children.RemoveAt(0);
+            main_rl.Children.Add(rl_ui[2],
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return 0; }));
+            main_rl.Children.Add(rl_btns,
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return x.Height - 100; }));
         }
 
 
@@ -161,9 +213,17 @@ namespace Uni_GoyGoy
 
         }
 
-        public RelativeLayout studyExams_UI()
+        public void getStudyExams_UI()
         {
-            return rl_ui[0];
+            rl_ui[3].BackgroundColor = Color.DarkBlue;
+            main_rl.Children.RemoveAt(1);
+            main_rl.Children.RemoveAt(0);
+            main_rl.Children.Add(rl_ui[3],
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return 0; }));
+            main_rl.Children.Add(rl_btns,
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return x.Height - 100; }));
         }
 
         /***********************    Ders Notu Paylaşım Sistemi Arayüzü Sonu       ***************************/
@@ -175,9 +235,17 @@ namespace Uni_GoyGoy
 
         }
 
-        public RelativeLayout confessions_UI()
+        public void getConfessions_UI()
         {
-            return rl_ui[0];
+            rl_ui[4].BackgroundColor = Color.Purple;
+            main_rl.Children.RemoveAt(1);
+            main_rl.Children.RemoveAt(0);
+            main_rl.Children.Add(rl_ui[4],
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return 0; }));
+            main_rl.Children.Add(rl_btns,
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return x.Height - 100; }));
         }
 
         /***********************    İtiraf Sistemi Arayüzü Sonu       ***************************/
@@ -189,9 +257,17 @@ namespace Uni_GoyGoy
 
         }
 
-        public RelativeLayout complaints_UI()
+        public void getComplaints_UI()
         {
-            return rl_ui[0];
+            rl_ui[5].BackgroundColor = Color.Orange;
+            main_rl.Children.RemoveAt(1);
+            main_rl.Children.RemoveAt(0);
+            main_rl.Children.Add(rl_ui[5],
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return 0; }));
+            main_rl.Children.Add(rl_btns,
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return x.Height - 100; }));
         }
 
         /***********************    Şikayet Sistemi Arayüzü Sonu       ***************************/

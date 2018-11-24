@@ -17,7 +17,8 @@ namespace Uni_GoyGoy
             this.BackgroundColor = Color.White;
             UI screen = new UI();
 
-            this.Content = screen.getRing_UI();
+            screen.getLogin_UI();
+            this.Content = screen.getScreen();
         }
     }
 }
