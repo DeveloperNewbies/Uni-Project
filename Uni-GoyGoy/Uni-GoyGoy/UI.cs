@@ -95,7 +95,12 @@ namespace Uni_GoyGoy
                 };
             }
 
-           
+            btns[0].Clicked += UI_btn0Clicked;
+            btns[1].Clicked += UI_btn1Clicked;
+            btns[2].Clicked += UI_btn2Clicked;
+            btns[3].Clicked += UI_btn3Clicked;
+            btns[4].Clicked += UI_btn4Clicked;
+
             for (int i = 0; i < btns.GetLength(0); i++)
             {
                 int c = buttons_width * i;
@@ -127,6 +132,27 @@ namespace Uni_GoyGoy
                 Constraint.RelativeToParent((x) => { return 0; }),
                 Constraint.RelativeToParent((x) => { return x.Height - 100; }));
 
+        }
+
+        private void UI_btn0Clicked(object sender, EventArgs e)
+        {
+            getLogin_UI();
+        }
+        private void UI_btn1Clicked(object sender, EventArgs e)
+        {
+            getRing_UI();
+        }
+        private void UI_btn2Clicked(object sender, EventArgs e)
+        {
+            getHashtagNews_UI();
+        }
+        private void UI_btn3Clicked(object sender, EventArgs e)
+        {
+            getConfessions_UI();
+        }
+        private void UI_btn4Clicked(object sender, EventArgs e)
+        {
+            getComplaints_UI();
         }
 
         /*********** End of UI Buttons Initialize **********/
