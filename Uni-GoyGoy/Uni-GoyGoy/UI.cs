@@ -70,7 +70,7 @@ namespace Uni_GoyGoy
 
         }
 
-        /*********** end of UI Initialize **********/
+        /*********** End of UI Initialize **********/
 
 
         /*********** UI Buttons Initialize **********/
@@ -95,6 +95,10 @@ namespace Uni_GoyGoy
                 };
             }
 
+
+            /*
+             * Buttons Click Events Add
+             * */
             btns[0].Clicked += UI_btn0Clicked;
             btns[1].Clicked += UI_btn1Clicked;
             btns[2].Clicked += UI_btn2Clicked;
@@ -134,6 +138,12 @@ namespace Uni_GoyGoy
 
         }
 
+        /*
+         * Buttons Click Events Decleration
+         * All Of This Make Me Sick!
+         * Cuz of not them all writeable automatic..
+         */
+
         private void UI_btn0Clicked(object sender, EventArgs e)
         {
             getLogin_UI();
@@ -155,6 +165,8 @@ namespace Uni_GoyGoy
             getComplaints_UI();
         }
 
+
+
         /*********** End of UI Buttons Initialize **********/
 
         public RelativeLayout getScreen()
@@ -162,6 +174,17 @@ namespace Uni_GoyGoy
             return main_rl;
         }
 
+        private void getScreenChanged(int index)
+        {
+            main_rl.Children.RemoveAt(1);
+            main_rl.Children.RemoveAt(0);
+            main_rl.Children.Add(rl_ui[index],
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return 0; }));
+            main_rl.Children.Add(rl_btns,
+                Constraint.RelativeToParent((x) => { return 0; }),
+                Constraint.RelativeToParent((x) => { return x.Height - 100; }));
+        }
 
         /*********************** Giriş Sistemi Arayüzü ***************************/
         private void Login_UI()
@@ -173,14 +196,7 @@ namespace Uni_GoyGoy
         public void getLogin_UI()
         {
             rl_ui[0].BackgroundColor = Color.Red;
-            main_rl.Children.RemoveAt(1);
-            main_rl.Children.RemoveAt(0);
-            main_rl.Children.Add(rl_ui[0], 
-                Constraint.RelativeToParent((x) => { return 0; }),
-                Constraint.RelativeToParent((x) => { return 0; }));
-            main_rl.Children.Add(rl_btns,
-                Constraint.RelativeToParent((x) => { return 0; }),
-                Constraint.RelativeToParent((x) => { return x.Height - 100; }));
+            getScreenChanged(0);
         }
 
         /***********************    Giriş Sistemi Arayüzü Sonu       ***************************/
@@ -198,14 +214,7 @@ namespace Uni_GoyGoy
         public void getRing_UI()
         {
             rl_ui[1].BackgroundColor = Color.Yellow;
-            main_rl.Children.RemoveAt(1);
-            main_rl.Children.RemoveAt(0);
-            main_rl.Children.Add(rl_ui[1],
-                Constraint.RelativeToParent((x) => { return 0; }),
-                Constraint.RelativeToParent((x) => { return 0; }));
-            main_rl.Children.Add(rl_btns,
-                Constraint.RelativeToParent((x) => { return 0; }),
-                Constraint.RelativeToParent((x) => { return x.Height - 100; }));
+            getScreenChanged(1);
         }
 
         /***********************    Ring Takip Sistemi Arayüzü Sonu       ***************************/
@@ -218,15 +227,8 @@ namespace Uni_GoyGoy
 
         public void getHashtagNews_UI()
         {
-            rl_ui[2].BackgroundColor = Color.Green;
-            main_rl.Children.RemoveAt(1);
-            main_rl.Children.RemoveAt(0);
-            main_rl.Children.Add(rl_ui[2],
-                Constraint.RelativeToParent((x) => { return 0; }),
-                Constraint.RelativeToParent((x) => { return 0; }));
-            main_rl.Children.Add(rl_btns,
-                Constraint.RelativeToParent((x) => { return 0; }),
-                Constraint.RelativeToParent((x) => { return x.Height - 100; }));
+            rl_ui[2].BackgroundColor = Color.Silver;
+            getScreenChanged(2);
         }
 
 
@@ -242,14 +244,7 @@ namespace Uni_GoyGoy
         public void getStudyExams_UI()
         {
             rl_ui[3].BackgroundColor = Color.DarkBlue;
-            main_rl.Children.RemoveAt(1);
-            main_rl.Children.RemoveAt(0);
-            main_rl.Children.Add(rl_ui[3],
-                Constraint.RelativeToParent((x) => { return 0; }),
-                Constraint.RelativeToParent((x) => { return 0; }));
-            main_rl.Children.Add(rl_btns,
-                Constraint.RelativeToParent((x) => { return 0; }),
-                Constraint.RelativeToParent((x) => { return x.Height - 100; }));
+            getScreenChanged(3);
         }
 
         /***********************    Ders Notu Paylaşım Sistemi Arayüzü Sonu       ***************************/
@@ -264,14 +259,7 @@ namespace Uni_GoyGoy
         public void getConfessions_UI()
         {
             rl_ui[4].BackgroundColor = Color.Purple;
-            main_rl.Children.RemoveAt(1);
-            main_rl.Children.RemoveAt(0);
-            main_rl.Children.Add(rl_ui[4],
-                Constraint.RelativeToParent((x) => { return 0; }),
-                Constraint.RelativeToParent((x) => { return 0; }));
-            main_rl.Children.Add(rl_btns,
-                Constraint.RelativeToParent((x) => { return 0; }),
-                Constraint.RelativeToParent((x) => { return x.Height - 100; }));
+            getScreenChanged(4);
         }
 
         /***********************    İtiraf Sistemi Arayüzü Sonu       ***************************/
@@ -286,14 +274,7 @@ namespace Uni_GoyGoy
         public void getComplaints_UI()
         {
             rl_ui[5].BackgroundColor = Color.Orange;
-            main_rl.Children.RemoveAt(1);
-            main_rl.Children.RemoveAt(0);
-            main_rl.Children.Add(rl_ui[5],
-                Constraint.RelativeToParent((x) => { return 0; }),
-                Constraint.RelativeToParent((x) => { return 0; }));
-            main_rl.Children.Add(rl_btns,
-                Constraint.RelativeToParent((x) => { return 0; }),
-                Constraint.RelativeToParent((x) => { return x.Height - 100; }));
+            getScreenChanged(5);
         }
 
         /***********************    Şikayet Sistemi Arayüzü Sonu       ***************************/
