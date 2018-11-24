@@ -14,6 +14,8 @@ namespace Uni_GoyGoy.iOS
         {
             // if you want to use a different Application Delegate class from "AppDelegate"
             // you can specify it here.
+            Ekran.Ios_Width = UIScreen.MainScreen.Bounds.Width;
+            Ekran.Ios_Height = UIScreen.MainScreen.Bounds.Height;
             UIApplication.Main(args, null, "AppDelegate");
         }
     }
