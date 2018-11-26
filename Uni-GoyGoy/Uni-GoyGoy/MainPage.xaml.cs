@@ -14,7 +14,7 @@ namespace Uni_GoyGoy
         {
 
             InitializeComponent();
-            this.BackgroundColor = Color.Black ;
+            this.BackgroundColor = Color.Yellow ;
             UI screen = new UI();
 
             screen.getLogin_UI();
