@@ -51,21 +51,34 @@ namespace Uni_GoyGoy
              * rl_ui[3] = studyexams UI - 
              * rl_ui[4] = hastags UI - 
              * rl_ui[5] = studyexams UI*/
-
-
             main_rl = new RelativeLayout();
+
             rl_ui = new RelativeLayout[6];
+
+            rl_btns = new RelativeLayout();
+            rl_btns.HeightRequest = 100;
+
+            
+
             for (int i = 0; i < rl_ui.GetLength(0); i++)
             {
                 rl_ui[i] = new RelativeLayout();
-                rl_ui[i].WidthRequest = Ekran.Android_Width;
-                rl_ui[i].HeightRequest = Ekran.Android_Height;
+                //rl_ui[i].WidthRequest = Ekran.Android_Width;
+                //rl_ui[i].HeightRequest = Ekran.Android_Height;
+                Label l = new Label();
+                l.Text = "Hi Mother Fucker";
+                l.TextColor = Color.Black;
+                l.FontSize = 30;
+                rl_ui[i].Children.Add(l,
+                    Constraint.RelativeToParent((x) => { return x.Width / 1; }), 
+                    Constraint.RelativeToParent((x) => { return x.Height / 1; }));
+
             }
 
 
 
-            rl_btns = new RelativeLayout();
-            rl_btns.HeightRequest = 100;
+
+
 
 
         }
@@ -135,6 +148,14 @@ namespace Uni_GoyGoy
             main_rl.Children.Add(rl_btns,
                 Constraint.RelativeToParent((x) => { return 0; }),
                 Constraint.RelativeToParent((x) => { return x.Height - 100; }));
+
+            for(int i = 0; i<6; i++)
+            {
+
+                Console.WriteLine("mainui.width: " + main_rl.Width + " mainui.height: " + rl_ui[i].Width + " " + i + " rlui.width: " + rl_ui[i].Width + " rl_ui.height: " + rl_ui[i].Height);
+                Console.WriteLine("REQ mainui.width: " + main_rl.WidthRequest + " mainui.height: " + rl_ui[i].HeightRequest + " " + i + " rlui.width: " + rl_ui[i].WidthRequest + " rl_ui.height: " + rl_ui[i].WidthRequest);
+
+            }
 
         }
 
