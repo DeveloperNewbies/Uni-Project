@@ -15,7 +15,7 @@ namespace Uni_GoyGoy
 
             InitializeComponent();
 
-            this.BackgroundColor = Color.White ;
+            this.BackgroundColor = Color.Aqua ;
 
             UI screen = new UI();
 
