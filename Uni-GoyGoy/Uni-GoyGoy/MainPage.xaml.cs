@@ -14,11 +14,9 @@ namespace Uni_GoyGoy
         {
 
             InitializeComponent();
-<<<<<<< HEAD
+
             this.BackgroundColor = Color.Red ;
-=======
-            this.BackgroundColor = Color.Black ;
->>>>>>> parent of b4f7a6b... Update MainPage.xaml.cs
+
             UI screen = new UI();
 
             screen.getLogin_UI();
