@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin27Kasim.Views.ControlPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Button Text="Xamarin Enes Budak" Clicked="onClicked" ></Button>
+
+            <ActivityIndicator x:Name="activity"  IsRunning="False" ></ActivityIndicator>
+            <DatePicker x:Name="myDatePicker"  ></DatePicker>
+            <Entry FontAttributes="Bold" FontFamily="Calibri" FontSize="25"  HorizontalTextAlignment="Center"
+                   Placeholder="EnesBudak" PlaceholderColor="Red" TextColor="Blue" Keyboard="Numeric"
+                     ></Entry>
+            <Picker Title="Enes" SelectedIndexChanged="pickerOnChanged">
+
+                <Picker.Items>
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <ProgressBar x:Name="progressBar" Progress=".3" ProgressColor="Blue"></ProgressBar>
+            <Slider x:Name="slider" Minimum="0" Maximum="100" Value="50" ></Slider>
+            <Label BindingContext="{x:Reference slider}" Text="{Binding Value,StringFormat='{0:F0}'}" 
+                FontSize="Large" HorizontalOptions="Center"></Label>
+            <Stepper Minimum="5" Maximum="100" Increment="5" ValueChanged="onStepperValueChanged"></Stepper>
+            <Label FontSize="Large" TextColor="Aqua" x:Name="lblStepper"></Label>
+            <Switch  IsToggled="True" Toggled="onToggled"></Switch>
+            <TimePicker  ></TimePicker>
+        </StackLayout>
+    </ContentPage.Content>
+
+
+</ContentPage>

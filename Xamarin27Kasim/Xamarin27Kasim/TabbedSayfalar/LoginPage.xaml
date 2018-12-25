@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              
+             x:Class="Xamarin27Kasim.Views.SpecialPage" >
+    <ContentPage.Content>
+
+        <TableView Intent="Form">
+            <TableRoot>
+                <TableSection Title="Uni-GoyGoy" >
+                    <EntryCell   Label="Kullanıcı adı:" Placeholder="Kullanıcı adı giriniz " Keyboard="Text" ></EntryCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Şifre:" VerticalOptions="Center" Margin="60,0,0,0"/>
+
+
+                            <Entry IsPassword="True"  Placeholder="Şifre giriniz" HorizontalOptions="Center"></Entry>
+                           
+
+                        </StackLayout>
+                    </ViewCell>
+                    <SwitchCell Text="Beni Hatırla" On="True" ></SwitchCell>
+                    <ViewCell>
+
+                        <StackLayout>
+                            <Button Text="Giriş" Clicked="Button_Clicked" ></Button>
+                        </StackLayout>
+                    </ViewCell>
+
+                </TableSection>
+              
+            </TableRoot>
+
+        </TableView>
+
+        
+
+
+
+    </ContentPage.Content>
+    
+
+</ContentPage>
